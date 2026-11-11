@@ -7,29 +7,29 @@ link: https://docs.google.com/document/d/1DPBcyGHgflmz5RDsZQ2X8KVBPoEF5PdAz9BBNF
 
 O **"Sistema de Controle de Vendas Fiadas"** foi idealizado para atender às necessidades da loja **"Ritomakar Esportes"**, que enfrenta séria desorganização no controle de vendas a prazo. Atualmente, os **registros de clientes**, **vendas** e **pagamentos** são feitos *manualmente em papéis e cadernos*, sem **padronização**, gerando **lentidão no atendimento**, **risco de perda de dados** e **dificuldade para identificar débitos em aberto** e clientes inadimplentes. 
 
-A solução consiste em uma aplicação desktop que **automatiza** o controle financeiro de vendas fiadas. O sistema oferece **cadastro padronizado de clientes e produtos**, **registro de vendas e pagamentos**, **consulta rápida de saldo e contas pendentes**, **controle de limite de crédito**,**prioriedade automática de débitos** (priorizando as contas mais antigas), **envio de notificações de inadimplência** e **emissão de relatórios** de clientes em atraso.
+A solução consiste em uma aplicação desktop que **automatiza** o controle financeiro de vendas fiadas. O sistema oferece **cadastro padronizado de clientes e produtos**, **registro de vendas e pagamentos**, **consulta rápida de saldo e contas pendentes**, **controle de limite de crédito**,**prioridade automática de débitos** (priorizando as contas mais antigas), **envio de notificações de inadimplência** e **emissão de relatórios** de clientes em atraso.
 
 ## Equipe e Definição de Papéis
 
-|            Membro             |     Papel     |               E-mail              | 
-| :---------------------------- | :-----------: | :-------------------------------: |
-| Karliane Medeiros             | Orientadora   |  |
-| Pedro Lucas da Silva Araújo   |  |  | 
-| Thomas Reyel da Silva Morais  |  |  | 
-| Pedro Henrique da Silva       |  |  | 
-| Guilherme Fernandes e Silva   |  |  | 
-| Jezreel Asaias da Silva Souza |  |  |
+|            Membro             |     Papel     |                 E-mail               | 
+| :---------------------------- | :-----------: | :----------------------------------: |
+| Karliane Medeiros             | Orientadora   | karliane.vale@ufrn.br                |
+| Pedro Lucas da Silva Araújo   | Desenvolvedor | pedro.araujo.716@ufrn.edu.br         | 
+| Thomas Reyel da Silva Morais  | Desenvolvedor | thomasreyel2231@gmail.com            | 
+| Pedro Henrique da Silva       | Desenvolvedor | pedro.silva.437@ufrn.edu.br          |
+| Guilherme Fernandes e Silva   | Desenvolvedor | guilhermefernandescruzeta@gmail.com  | 
+| Jezreel Asaias da Silva Souza | Desenvolvedor | jezreel.asaias.silva.129@ufrn.edu.br |
 
 ### Matriz de Competências
 
-|           Membro              |     Competências   |
-| :---------------------------- | :----------------: |
-| Karliane Medeiros             | Gestão de Projetos, Engenharia de Software, Docência | 
-| Pedro Lucas da Silva Araújo   |  | 
-| Thomas Reyel da Silva Morais  |  | 
-| Pedro Henrique da Silva       |  | 
-| Guilherme Fernandes e Silva   |  | 
-| Jezreel Asaias da Silva Souza |  |
+|           Membro              |            Competências            |
+| :---------------------------- | :--------------------------------: |
+| Karliane Medeiros             | Gestão de Projetos, Professora     | 
+| Pedro Lucas da Silva Araújo   | Estudante de sistema de informação | 
+| Thomas Reyel da Silva Morais  | Estudante de sistema de informação | 
+| Pedro Henrique da Silva       | Estudante de sistema de informação | 
+| Guilherme Fernandes e Silva   | Estudante de sistema de informação | 
+| Jezreel Asaias da Silva Souza | Estudante de sistema de informação |
 
 ## Perfis dos Usuários
 
