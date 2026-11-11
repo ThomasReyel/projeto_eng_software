@@ -43,113 +43,140 @@ O sistema poderá ser utilizado por diferentes perfis de usuários na loja **"Ri
 
 ## Lista de Requisitos Funcionais
 
-### Entidade Centro - US01 - Manter Centro
-Um centro representa uma unidade administrativa da Universidade. Um centro tem código, nome, sigla, endereço e site.
+### Entidade Funcionário - RF01 - Gerenciar Funcionário
+Um funcionário tem: nome, data de nascimento, endereço, telefone, CPF e senha.
 
-Requisito                     | Descrição   | Ator |
----------                     | ----------- | ---------- |
-RF01.01 - Inserir Centro      | Insere novo centro informando: código, nome, sigla, endereço e site. | Administrador |
-RF01.02 - Listar Centros      | Listagem dos centros utilizando filtros nos atributos: código, nome, sigla, endereço e site. | Administrador, Docente, Discente |
-RF01.03 - Atualizar Centro    | Atualiza um centro informando: nome, sigla, endereço e site. | Administrador |
-RF01.04 - Deletar Centro      | Deleta um centro informando o código. | Administrador |
-
----
-
-### Entidade Departamento - US02 - Manter Departamento
-Um departamento tem código, nome, sigla, endereço e o centro ao qual pertence.
-
-Requisito                     | Descrição   | Ator           |
----------                     | ----------- | ----------     |
-RF02.01 - Inserir Departamento | Insere novo departamento informando: código, nome, sigla, endereço e centro. | Administrador |
-RF02.02 - Listar Departamentos | Listagem de departamentos utilizando filtros nos atributos: código, nome, sigla, endereço e centro. | Administrador |
-RF02.03 - Atualizar Departamento | Atualiza um departamento informando: nome, sigla, endereço e centro. | Administrador |
-RF02.04 - Deletar Departamento | Deleta um departamento informando o código. | Administrador |
+Requisito                         | Descrição | Ator |
+--------------------------------- | ----------- | ---------- |
+RF01.01 - Inserir Funcionário     | Insere novo funcionário informando: nome, data de nascimento, endereço, telefone, CPF e senha. | Administrador |
+RF01.02 - Listar Funcionários     | Listagem de funcionários utilizando filtros nos atributos: nome, data de nascimento, endereço, telefone e CPF. | Administrador |
+RF01.03 - Atualizar Funcionário   | Atualiza um funcionário informando: nome, data de nascimento, endereço, telefone, CPF e senha. | Administrador |
+RF01.04 - Desativar Funcionário   | Desativa um funcionário cadastrado no sistema. | Administrador |
 
 ---
 
-### Entidade Sala - US03 - Manter Sala
-Uma sala tem um número, um nome, capacidade, tamanho, bloco e o centro ao qual pertence.
+### Entidade Cliente - RF02 - Gerenciar Cliente
+Um cliente tem: nome, data de nascimento, endereço, telefone e CPF.
 
-Requisito                     | Descrição   | Ator           |
----------                     | ----------- | ----------     |
-RF03.01 - Inserir Sala         | Insere nova sala informando: número, nome, capacidade, tamanho, bloco e centro. | Administrador |
-RF03.02 - Listar Salas         | Listagem de salas utilizando filtros nos atributos: número, nome, capacidade, tamanho, bloco e centro. | Administrador |
-RF03.03 - Atualizar Sala       | Atualiza uma sala informando: nome, capacidade, tamanho, bloco e centro. | Administrador |
-RF03.04 - Deletar Sala         | Deleta uma sala informando o número. | Administrador |
-
----
-
-### Entidade Componente Curricular - RF004 - Manter Componente Curricular
-Um componente curricular é de um tipo de componente. Ele tem: código, nome, ementa, departamento, carga horária, modalidade, equivalências, requisitos com outros componentes e data de criação.
-
-Requisito                     | Descrição   | Ator           |
----------                     | ----------- | ----------     |
-RF04.01 - Inserir Componente   | Insere novo componente curricular informando: código, nome, ementa, departamento, carga horária, modalidade, equivalências, requisitos e data de criação. | Administrador |
-RF04.02 - Listar Componentes   | Listagem de componentes curriculares utilizando filtros nos atributos: código, nome, ementa, departamento, carga horária, modalidade e data de criação. | Administrador |
-RF04.03 - Atualizar Componente | Atualiza um componente curricular informando: nome, ementa, departamento, carga horária, modalidade, equivalências e requisitos. | Administrador |
-RF04.04 - Deletar Componente   | Deleta um componente curricular informando o código. | Administrador |
+Requisito                         | Descrição | Ator |
+--------------------------------- | ----------- | ---------- |
+RF02.01 - Inserir Cliente         | Insere novo cliente informando: nome, data de nascimento, endereço, telefone e CPF. | Funcionário, Cliente |
+RF02.02 - Listar Clientes         | Listagem de clientes utilizando filtros nos atributos: nome, data de nascimento, endereço, telefone e CPF. | Funcionário, Cliente |
+RF02.03 - Atualizar Cliente       | Atualiza um cliente informando: nome, data de nascimento, endereço, telefone e CPF. | Funcionário, Cliente |
+RF02.04 - Desativar Cliente       | Desativa um cliente cadastrado no sistema. | Funcionário, Cliente |
 
 ---
 
-### Entidade Horário de Aula - RF005 - Manter Horário de Aula
-Um horário tem: dia da semana, turno, ordem (identificador), hora de início e hora de final.
+### Entidade Produto - RF03 - Gerenciar Produto
+Um produto tem: nome, marca e valor.
 
-Requisito                     | Descrição   | Ator           |
----------                     | ----------- | ----------     |
-RF05.01 - Inserir Horário      | Insere novo horário informando: dia da semana, turno, ordem, hora de início e hora de final. | Administrador |
-RF05.02 - Listar Horários      | Listagem de horários utilizando filtros nos atributos: dia da semana, turno, ordem, hora de início e hora de final. | Administrador |
-RF05.03 - Atualizar Horário    | Atualiza um horário informando: dia da semana, turno, ordem, hora de início e hora de final. | Administrador |
-RF05.04 - Deletar Horário      | Deleta um horário informando a ordem. | Administrador |
-
----
-
-### Entidade Professor - RF006 - Manter Professor
-Um professor tem: matrícula, nome, e-mail, telefone e o departamento.
-
-Requisito                     | Descrição   | Ator           |
----------                     | ----------- | ----------     |
-RF06.01 - Inserir Professor    | Insere novo professor informando: matrícula, nome, e-mail, telefone e departamento. | Administrador |
-RF06.02 - Listar Professores   | Listagem de professores utilizando filtros nos atributos: matrícula, nome, e-mail, telefone e departamento. | Administrador |
-RF06.03 - Atualizar Professor  | Atualiza um professor informando: nome, e-mail, telefone e departamento. | Administrador |
-RF06.04 - Deletar Professor    | Deleta um professor informando a matrícula. | Administrador |
+Requisito                         | Descrição | Ator |
+--------------------------------- | ----------- | ---------- |
+RF03.01 - Inserir Produto         | Insere novo produto informando: nome, marca e valor. | Funcionário |
+RF03.02 - Listar Produtos         | Listagem de produtos utilizando filtros nos atributos: nome, marca e valor. | Funcionário |
+RF03.03 - Atualizar Produto       | Atualiza um produto informando: nome, marca e valor. | Funcionário |
+RF03.04 - Desativar Produto       | Desativa um produto cadastrado no sistema. | Funcionário |
 
 ---
 
-### Entidade Turma - RF007 - Manter Turma
-Uma turma tem: código, professores, salas e horários. É de um componente curricular e pode ter mais de um professor, uma ou mais salas e vários horários de aulas.
+### Entidade Pagamento - RF04 - Administrar Pagamento
+Um pagamento tem: cliente, data, funcionário responsável e valor.
 
-Requisito                     | Descrição   | Ator                      |
----------                     | ----------- | ----------                |
-RF07.01 - Inserir Turma        | Insere nova turma informando: código, componente curricular, professores, salas e horários. | Chefes, Coordenadores |
-RF07.02 - Listar Turmas         | Listagem de turmas utilizando filtros nos atributos: código, componente curricular, professores, salas e horários. | Chefes, Coordenadores |
-RF07.03 - Atualizar Turma      | Atualiza uma turma informando: professores, salas e horários. | Chefes, Coordenadores |
-RF07.04 - Deletar Turma        | Deleta uma turma informando o código. | Chefes, Coordenadores |
-
----
-
-### Entidade Usuário - US08 - Manter Usuário
-Um usuário tem: nome, e-mail, senha e pode pertencer a um ou mais grupos.
-
-Requisito                     | Descrição   | Ator           |
----------                     | ----------- | ----------     |
-RF08.01 - Inserir Usuário      | Insere novo usuário informando: nome, e-mail, senha e grupos. | Administrador |
-RF08.02 - Listar Usuários      | Listagem de usuários utilizando filtros nos atributos: nome, e-mail e grupos. | Administrador |
-RF08.03 - Atualizar Usuário    | Atualiza um usuário informando: nome, e-mail, senha e grupos. | Administrador |
-RF08.04 - Deletar Usuário      | Deleta um usuário informando o e-mail. | Administrador |
-RF08.05 - Login do Usuário     | Realiza login informando e-mail e senha. | Usuário |
-RF08.06 - Logout do Usuário    | Realiza logout encerrando a sessão do usuário. | Usuário |
+Requisito                         | Descrição | Ator |
+--------------------------------- | ----------- | ---------- |
+RF04.01 - Inserir Pagamento       | Insere novo pagamento informando: cliente, data, funcionário responsável e valor. | Funcionário |
+RF04.02 - Listar Pagamentos       | Listagem de pagamentos utilizando filtros nos atributos: cliente, data, funcionário responsável e valor. | Funcionário |
+RF04.03 - Desativar Pagamento     | Desativa um pagamento cadastrado no sistema. | Funcionário |
 
 ---
 
-### Entidade Grupo - US09 - Manter Grupo
-Um grupo define permissões atribuídas a um conjunto de usuários. Ele tem: nome e permissões.
+### Entidade Venda - RF05 - Cadastrar Venda
+Uma venda tem: cliente, funcionário responsável, produto, data e valor.
 
-Requisito                     | Descrição   | Ator           |
----------                     | ----------- | ----------     |
-RF09.01 - Inserir Grupo        | Insere novo grupo informando: nome e permissões. | Administrador |
-RF09.02 - Listar Grupos        | Listagem de grupos utilizando filtros nos atributos: nome e permissões. | Administrador |
-RF09.03 - Atualizar Grupo      | Atualiza um grupo informando: nome e permissões. | Administrador |
-RF09.04 - Deletar Grupo        | Deleta um grupo informando o nome. | Administrador |
+Requisito                         | Descrição | Ator |
+--------------------------------- | ----------- | ---------- |
+RF05.01 - Inserir Venda           | Cadastra nova venda informando: cliente, funcionário responsável, produto, data e valor. | Funcionário |
+
+---
+
+### Entidade Venda - RF06 - Consultar Venda
+Uma venda representa uma transação realizada entre um cliente e a empresa.
+
+Requisito                         | Descrição | Ator |
+--------------------------------- | ----------- | ---------- |
+RF06.01 - Consultar Vendas        | Realiza a consulta das vendas realizadas no sistema. | Funcionário |
+
+---
+
+### Entidade Venda - RF07 - Cancelar Venda
+Uma venda pode ser cancelada mediante a informação do motivo do cancelamento.
+
+Requisito                         | Descrição | Ator |
+--------------------------------- | ----------- | ---------- |
+RF07.01 - Cancelar Venda          | Permite cancelar uma venda informando o motivo do cancelamento. | Administrador |
+
+---
+
+### Entidade Cliente - RF08 - Consultar Inadimplentes
+Clientes inadimplentes são aqueles que possuem débitos pendentes.
+
+Requisito                         | Descrição | Ator |
+--------------------------------- | ----------- | ---------- |
+RF08.01 - Listar Inadimplentes    | Gera uma lista contendo todos os clientes inadimplentes. | Administrador, Funcionário |
+
+---
+
+### Entidade Funcionário - RF09 - Realizar Login
+Um funcionário realiza login no sistema utilizando uma senha única.
+
+Requisito                         | Descrição | Ator |
+--------------------------------- | ----------- | ---------- |
+RF09.01 - Login do Funcionário    | Realiza login informando a senha única do funcionário. | Funcionário |
+
+---
+
+### Entidade Conta - RF10 - Gerar Conta
+Uma conta é gerada automaticamente quando uma venda é cadastrada.
+
+Requisito                         | Descrição | Ator |
+--------------------------------- | ----------- | ---------- |
+RF10.01 - Gerar Conta             | Gera automaticamente uma conta para o cliente quando uma venda é cadastrada. | Sistema |
+
+---
+
+### Entidade Conta - RF11 - Consultar Conta
+Uma conta representa os débitos de um cliente no sistema.
+
+Requisito                         | Descrição | Ator |
+--------------------------------- | ----------- | ---------- |
+RF11.01 - Consultar Conta         | Realiza a consulta da conta de um cliente. | Funcionário |
+
+---
+
+### Entidade Conta - RF12 - Consultar Contas
+Um cliente pode possuir várias contas ativas no sistema.
+
+Requisito                         | Descrição | Ator |
+--------------------------------- | ----------- | ---------- |
+RF12.01 - Consultar Contas Ativas | Permite visualizar todas as contas ativas de um determinado cliente. | Funcionário |
+
+---
+
+### Entidade Conta - RF13 - Pagar Conta
+O pagamento de uma conta deve priorizar os débitos mais antigos do cliente, utilizando eventuais créditos para abater dívidas posteriores.
+
+Requisito                         | Descrição | Ator |
+--------------------------------- | ----------- | ---------- |
+RF13.01 - Pagar Conta             | Realiza a baixa dos débitos de clientes, garantindo que o pagamento seja destinado à conta mais antiga. Caso exista troco ou crédito, o valor restante será utilizado para abater a próxima dívida pendente. | Funcionário |
+
+---
+
+### Entidade Conta - RF14 - Cancelar Conta
+Uma conta deve ser cancelada quando a venda que a originou for cancelada.
+
+Requisito                         | Descrição | Ator |
+--------------------------------- | ----------- | ---------- |
+RF14.01 - Cancelar Conta          | Cancela a conta do cliente quando a venda correspondente é cancelada. | Sistema |
 
 ---
 
