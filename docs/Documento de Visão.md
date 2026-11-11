@@ -72,10 +72,10 @@ Um produto tem: nome, marca e valor.
 
 Requisito                         | Descrição | Ator |
 --------------------------------- | ----------- | ---------- |
-RF03.01 - Inserir Produto         | Insere novo produto informando: nome, marca e valor. | Funcionário |
-RF03.02 - Listar Produtos         | Listagem de produtos utilizando filtros nos atributos: nome, marca e valor. | Funcionário |
-RF03.03 - Atualizar Produto       | Atualiza um produto informando: nome, marca e valor. | Funcionário |
-RF03.04 - Desativar Produto       | Desativa um produto cadastrado no sistema. | Funcionário |
+RF03.01 - Inserir Produto         | Insere novo produto informando: nome, marca e valor. | Administrador |
+RF03.02 - Listar Produtos         | Listagem de produtos utilizando filtros nos atributos: nome, marca e valor. | Administrador |
+RF03.03 - Atualizar Produto       | Atualiza um produto informando: nome, marca e valor. | Administrador |
+RF03.04 - Desativar Produto       | Desativa um produto cadastrado no sistema. | Administrador |
 
 ---
 
@@ -86,7 +86,7 @@ Requisito                         | Descrição | Ator |
 --------------------------------- | ----------- | ---------- |
 RF04.01 - Inserir Pagamento       | Insere novo pagamento informando: cliente, data, funcionário responsável e valor. | Funcionário |
 RF04.02 - Listar Pagamentos       | Listagem de pagamentos utilizando filtros nos atributos: cliente, data, funcionário responsável e valor. | Funcionário |
-RF04.03 - Desativar Pagamento     | Desativa um pagamento cadastrado no sistema. | Funcionário |
+RF04.03 - Desativar Pagamento     | Desativa um pagamento cadastrado no sistema. | Administrador |
 
 ---
 
@@ -104,7 +104,7 @@ Uma venda representa uma transação realizada entre um cliente e a empresa.
 
 Requisito                         | Descrição | Ator |
 --------------------------------- | ----------- | ---------- |
-RF06.01 - Consultar Vendas        | Realiza a consulta das vendas realizadas no sistema. | Funcionário |
+RF06.01 - Consultar Vendas        | Realiza a consulta das vendas realizadas no sistema. | Administrador |
 
 ---
 
@@ -131,7 +131,7 @@ Um funcionário realiza login no sistema utilizando uma senha única.
 
 Requisito                         | Descrição | Ator |
 --------------------------------- | ----------- | ---------- |
-RF09.01 - Login do Funcionário    | Realiza login informando a senha única do funcionário. | Funcionário |
+RF09.01 - Login do Funcionário    | Realiza login informando a senha única do funcionário. | Funcionário, Administrador |
 
 ---
 
