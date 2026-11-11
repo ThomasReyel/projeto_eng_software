@@ -243,6 +243,7 @@ erDiagram
 
     CLIENTE ||--o{ VENDA : "realiza"
     CLIENTE ||--o{ PAGAMENTO : "efetua"
+    CLIENTE ||--o{ CONTA : "possui"
     FUNCIONARIO ||--o{ VENDA : "registra"
     VENDA ||--|| CONTA : "gera"
     VENDA ||--o{ VENDA_PRODUTO : "contém"
