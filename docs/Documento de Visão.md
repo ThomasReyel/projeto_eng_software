@@ -256,11 +256,17 @@ erDiagram
 
 ## Lista de Requisitos Não-Funcionais
 
-Requisito                                 | Descrição   |
----------                                 | ----------- |
-RNF001 - Deve ser acessível via navegador | Deve abrir perfeitamento no Firefox e no Chrome. |
-RNF002 - Consultas deve ser eficiente | O sistema deve executar as consultas em milessegundos |
-RNF003 - Log e histórico de acesso e funções | Deve manter um log de todos os acessos e das funções executadas pelo usuário |
+Requisito                                      | Descrição |
+---------------------------------------------- | ----------- |
+RNF001 - Permissões                            | O sistema deve ter diferentes níveis de permissões. Dessa forma, dependendo de qual funcionário está utilizando ele, o sistema bloqueia/libera funcionalidades como: alterar o status do cliente (confiável/não confiável), ou gerenciar funcionário. |
+RNF002 - Design e Usabilidade da Interface     | A interface do sistema deve seguir padrões de usabilidade e consistência visual, permitindo que usuários realizem operações básicas sem necessidade de treinamento avançado. Os componentes visuais devem manter padronização de cores, menus, formulários e mensagens do sistema, garantindo clareza na navegação e facilidade de aprendizado. |
+RNF003 - Notificação de Inadimplência          | No momento em que um cliente com uma dívida ativa completar 6 meses sem realizar um pagamento, o sistema deve enviar uma notificação na tela principal informando qual cliente está nessa situação. |
+RNF004 - Login e Acesso                        | O sistema deve restringir funcionários que não fizeram login a somente ler os dados cadastrados no sistema. Além disso, deve permitir que apenas funcionários "logados" consigam alterar dados do sistema. |
+RNF005 - Limite de Crédito                     | Clientes recém-cadastrados devem ter o status "não confiável" e possuir um limite de crédito de, no máximo, R$ 200. |
+RNF006 - Bloqueio de Conta                     | Clientes com o status de "inadimplente" não podem ter novas contas cadastradas. Se uma conta tentar ser cadastrada em um cliente inadimplente, o sistema irá cancelar a operação e enviar uma notificação. |
+RNF007 - Velocidade de Processamento           | O sistema deve processar operações que envolvam o banco de dados em até 3 segundos. |
+RNF008 - Capacidade do Banco de Dados          | O banco de dados deve suportar o armazenamento de até 100.000 registros de vendas e clientes sem perda de performance. |
+RNF009 - Estrutura de Hardware                  | O sistema não funcionará pela web, por isso necessita de um computador desktop ou notebook com pelo menos 4 GB de RAM e Windows 10 ou Linux. |
 
 ## Riscos
 
