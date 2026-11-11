@@ -155,87 +155,74 @@ RF09.04 - Deletar Grupo        | Deleta um grupo informando o nome. | Administra
 
 ### Modelo Conceitual
 
-Abaixo apresentamos o modelo conceitual usando o **Mermaid**.
+Abaixo apresentamos o modelo conceitual do sistema da **"Ritomakar Esportes"** utilizando o **Mermaid**.
 
 ```mermaid
 erDiagram
-    CENTRO {
-        string codigo PK
-        string nome
-        string sigla
-        string endereco
-        string site
-    }
-
-
-    DEPARTAMENTO {
-        string codigo PK
-        string nome
-        string sigla
-        string endereco
-    }
-    DEPARTAMENTO ||--o{ CENTRO : "pertence a"
-
-    SALA {
-        string numero PK
-        string nome
-        int capacidade
-        float tamanho
-        string bloco
-    }
-    SALA ||--o{ CENTRO : "pertence a"
-
-    COMPONENTE {
-        string codigo PK
-        string nome
-        text ementa
-        int cargaHoraria
-        string modalidade
-        date dataCriacao
-    }
-    COMPONENTE ||--o{ DEPARTAMENTO : "é de"
-    COMPONENTE }o--o{ COMPONENTE : "tem equivalências/requisitos"
-
-    HORARIO {
+    FUNCIONARIO {
         int id PK
-        string diaSemana
-        string turno
-        int ordem
-        time horaInicio
-        time horaFim
-    }
-
-    PROFESSOR {
-        string matricula PK
         string nome
-        string email
+        string cpf
         string telefone
-    }
-    PROFESSOR ||--o{ DEPARTAMENTO : "pertence a"
-
-    TURMA {
-        string codigo PK
-    }
-    TURMA ||--o{ COMPONENTE : "é de"
-    TURMA ||--o{ PROFESSOR : "é ministrada por"
-    TURMA ||--o{ SALA : "é realizada em"
-    TURMA ||--o{ HORARIO : "tem"
-
-    USUARIO {
-        string email PK
-        string nome
         string senha
+        boolean status
     }
-    USUARIO }o--o{ GRUPO : "pertence a"
 
-    GRUPO {
-        string nome PK
+    CLIENTE {
+        int id PK
+        string nome
+        string cpf
+        string email
+        boolean status
     }
-    GRUPO ||--o{ PERMISSAO : "tem"
 
-    PERMISSAO {
-        string nome PK
+    PRODUTO {
+        int id PK
+        string nome
+        string marca
+        double preco
+        boolean status
     }
+
+    VENDA {
+        int id PK
+        datetime data
+        double valor
+        boolean status
+    }
+
+    VENDA_PRODUTO {
+        int id PK
+        int quantidade
+    }
+
+    CONTA {
+        int id PK
+        double valor_original
+        double valor_atual
+        boolean status
+    }
+
+    PAGAMENTO {
+        int id PK
+        datetime data
+        double valor
+        boolean status
+    }
+
+    CONTA_PAGAMENTO {
+        int id PK
+    }
+
+    CLIENTE ||--o{ VENDA : "realiza"
+    CLIENTE ||--o{ PAGAMENTO : "efetua"
+    FUNCIONARIO ||--o{ VENDA : "registra"
+    VENDA ||--|| CONTA : "gera"
+    VENDA ||--o{ VENDA_PRODUTO : "contém"
+    PRODUTO ||--o{ VENDA_PRODUTO : "está em"
+    CONTA ||--o{ CONTA_PAGAMENTO : "recebe"
+    PAGAMENTO ||--o{ CONTA_PAGAMENTO : "origina"
+
 ```
 
 #### Descrição das Entidades
