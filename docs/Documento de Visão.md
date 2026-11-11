@@ -255,6 +255,30 @@ erDiagram
 
 #### Descrição das Entidades
 
+##### **Entidade Funcionário**:
+Representa os funcionários da loja, armazenando seus dados pessoais e credenciais de acesso ao sistema, além de seu status de cadastro.
+
+##### **Entidade Cliente**:
+Representa os clientes cadastrados na loja, armazenando informações pessoais e seu status no sistema. Um cliente pode realizar várias vendas, possuir várias contas e efetuar pagamentos.
+
+##### **Entidade Produto**:
+Representa os produtos comercializados pela loja, armazenando nome, marca, preço e status de disponibilidade no sistema.
+
+##### **Entidade Venda**:
+Representa uma transação comercial realizada por um cliente e registrada por um funcionário. Armazena a data, o valor total e o status da venda.
+
+##### **Entidade Venda_Produto**:
+Representa os produtos incluídos em uma venda, registrando a quantidade de cada produto comercializado. Faz a associação entre as entidades Venda e Produto.
+
+##### **Entidade Conta**:
+Representa uma dívida gerada a partir de uma venda e associada a um cliente. Armazena o valor original, o valor atual e o status da conta, permitindo acompanhar os débitos pendentes.
+
+##### **Entidade Pagamento**:
+Representa os pagamentos realizados pelos clientes para quitar suas contas. Armazena a data, o valor e o status do pagamento.
+
+##### **Entidade Conta_Pagamento**:
+Representa a associação entre contas e pagamentos, permitindo relacionar um pagamento a uma ou mais contas e controlar a distribuição dos valores pagos.
+
 ## Lista de Requisitos Não-Funcionais
 
 Requisito                                      | Descrição |
