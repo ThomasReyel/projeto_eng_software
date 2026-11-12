@@ -299,9 +299,8 @@ Tabela com o mapeamento dos riscos do projeto, as possíveis soluções e os res
 
 Data | Risco | Prioridade | Responsável | Status | Providência/Solução |
 ------ | ------ | ------ | ------ | ------ | ------ |
-10/03/2018 | Não aprendizado das ferramentas utilizadas pelos componentes do grupo | Alta | Todos | Vigente | Reforçar estudos sobre as ferramentas e aulas com a integrante que conhece a ferramenta |
-10/03/2018 | Ausência por qualquer motivo do cliente | Média | Gerente | Vigente | Planejar o cronograma tendo em base a agenda do cliente |
-10/03/2018 | Divisão de tarefas mal sucedida | Baixa | Gerente | Vigente | Acompanhar de perto o desenvolvimento de cada membro da equipe |
-10/03/2018 | Implementação de protótipo com as tecnologias | Alto | Todos | Resolvido | Encontrar tutorial com a maioria da tecnologia e implementar um caso base do sistema |
+12/11/2026 | Não aprendizado das ferramentas utilizadas pelos componentes do grupo | Alta | Todos | Vigente | Reforçar estudos sobre as ferramentas e aulas com a integrante que conhece a ferramenta |
+12/11/2026 | Não aplicar corretamente as permissões de cada tipo de usuário | Alta | Todos | Vigente | Conversar com o cliente a respeito e, se permitido, estender o prazo de entrega para aplicar corretamente cada permissão |
+12/11/2026 | Atrasar a entrega de alguma etapa de desenvolvimento | Alta | Todos | Vigente | Acompanhar de perto o desenvolvimento das tarefas designadas para cada membro da equipe e redistribuir as tarefas se necessário |
 
 ### Referências
