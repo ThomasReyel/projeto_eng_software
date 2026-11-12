@@ -304,3 +304,4 @@ Data | Risco | Prioridade | Responsável | Status | Providência/Solução |
 12/11/2026 | Atrasar a entrega de alguma etapa de desenvolvimento | Alta | Todos | Vigente | Acompanhar de perto o desenvolvimento das tarefas designadas para cada membro da equipe e redistribuir as tarefas se necessário |
 
 ### Referências
+- Documento que originou o projeto: https://docs.google.com/document/d/1HDU6too2T8zHj_Dg6dLiPwDcevXkZRDfu1H1QXowL70/edit?tab=t.0
