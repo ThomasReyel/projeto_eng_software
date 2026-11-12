@@ -142,5 +142,107 @@ erDiagram
 
 ```
 
-| Nome | Descrição | Tipo de Dado | Tamanho | Restrições de Domínio |
-| ---- | --------- | ------------ | ------- | --------------------- |
+### Dicionário de dados
+
+|   Tabela   | Cliente |
+| ---------- | ----------- |
+| Descrição  | Armazena as informações de um cliente. |
+| Observação | - |
+
+|  Nome         | Descrição                        | Tipo de Dado | Tamanho | Restrições de Domínio |
+| ------------- | -------------------------------- | ------------ | ------- | --------------------- |
+| id            | Identificador único do cliente   | SERIAL       | -       | PK, NOT NULL          |
+| id_conta      | Referência à conta do cliente    | SERIAL       | -       | FK, NOT NULL          |
+| nome          | Nome completo do cliente         | VARCHAR      | 100     | NOT NULL              |
+| cpf           | Cadastro de Pessoa Física        | CHAR         | 11      | UNIQUE, NOT NULL      |
+| email         | Endereço de e-mail               | VARCHAR      | 100     | UNIQUE                |
+| status        | Indica se o cliente está ativo   | BOOLEAN      | -       | NOT NULL, DEFAULT TRUE|
+
+|   Tabela   | Pagamento |
+| ---------- | ----------- |
+| Descrição  | Armazena as informações de um pagamento. |
+| Observação | Pagamentos são cadastrados para debitar uma ou mais contas ativa do cliente. |
+
+|  Nome         | Descrição                        | Tipo de Dado | Tamanho | Restrições de Domínio |
+| ------------- | -------------------------------- | ------------ | ------- | --------------------- |
+| id            | Identificador único do pagamento | SERIAL       | -       | PK, NOT NULL          |
+| id_cliente    | Referência ao cliente            | SERIAL       | -       | FK, NOT NULL          |
+| dataHora      | Data e hora do pagamento         | TIMESTAMP    | -       | NOT NULL              |
+| valor         | Valor total pago                 | DECIMAL      | 10,2    | NOT NULL, > 0         |
+| status        | Status do pagamento              | BOOLEAN      | -       | NOT NULL              |
+
+|   Tabela   | Conta |
+| ---------- | ----------- |
+| Descrição  | Armazena as informações de uma conta. |
+| Observação | Conta são as informações importantes de uma venda |
+
+|  Nome         | Descrição                        | Tipo de Dado | Tamanho | Restrições de Domínio |
+| ------------- | -------------------------------- | ------------ | ------- | --------------------- |
+| id            | Identificador único da conta     | SERIAL       | -       | PK, NOT NULL          |
+| id_cliente    | Referência ao cliente            | SERIAL       | -       | FK, NOT NULL          |
+| nome          | Nome da conta (descrição)        | VARCHAR      | 100     | NOT NULL              |
+| valor_original| Valor inicial da conta           | DECIMAL      | 10,2    | NOT NULL              |
+| valor_atual   | Valor atualizado da conta        | DECIMAL      | 10,2    | NOT NULL              |
+| status        | Status da conta (ativa/inativa)  | BOOLEAN      | -       | NOT NULL              |
+
+|   Tabela   | Venda |
+| ---------- | ----------- |
+| Descrição  | Armazena as informações de uma venda. |
+| Observação | - |
+
+|  Nome         | Descrição                        | Tipo de Dado | Tamanho | Restrições de Domínio |
+| ------------- | -------------------------------- | ------------ | ------- | --------------------- |
+| id            | Identificador único da venda     | SERIAL       | -       | PK, NOT NULL          |
+| id_cliente    | Referência ao cliente            | SERIAL       | -       | FK, NOT NULL          |
+| id_funcionario| Referência ao funcionário        | SERIAL       | -       | FK, NOT NULL          |
+| data          | Data da realização da venda      | DATE         | -       | NOT NULL              |
+| status        | Status da venda                  | BOOLEAN      | -       | NOT NULL              |
+
+|   Tabela   | Funcionário |
+| ---------- | ----------- |
+| Descrição  | Armazena as informações de um funcionário. |
+| Observação | - |
+
+|  Nome         | Descrição                        | Tipo de Dado | Tamanho | Restrições de Domínio |
+| ------------- | -------------------------------- | ------------ | ------- | --------------------- |
+| id            | Identificador único do funcionário| SERIAL      | -       | PK, NOT NULL          |
+| nome          | Nome do funcionário              | VARCHAR      | 100     | NOT NULL              |
+| telefone      | Telefone de contato              | VARCHAR      | 20      | -                     |
+| cpf           | Cadastro de Pessoa Física        | CHAR         | 11      | UNIQUE, NOT NULL      |
+| status        | Status (ativo/inativo)           | BOOLEAN      | -       | NOT NULL              |
+
+|   Tabela   | Produto |
+| ---------- | ----------- |
+| Descrição  | Armazena as informações de um produto. |
+| Observação | - |
+
+|  Nome         | Descrição                        | Tipo de Dado | Tamanho | Restrições de Domínio |
+| ------------- | -------------------------------- | ------------ | ------- | --------------------- |
+| id            | Identificador único do produto   | SERIAL       | -       | PK, NOT NULL          |
+| nome          | Nome do produto                  | VARCHAR      | 100     | NOT NULL              |
+| marca         | Marca do produto                 | VARCHAR      | 50      | -                     |
+| preco         | Preço unitário do produto        | DECIMAL      | 10,2    | NOT NULL, >= 0        |
+| status        | Status (disponível/inativo)      | BOOLEAN      | -       | NOT NULL              |
+
+__Tabelas extras que não fazem parte do modelo ER__
+
+|   Tabela   | Conta_pagamento |
+| ---------- | ----------- |
+| Descrição  | Tabela associativa entre Conta e Pagamento. |
+| Observação | Representa a relação N:N (muitos para muitos) entre contas e pagamentos. |
+
+|  Nome         | Descrição                        | Tipo de Dado | Tamanho | Restrições de Domínio |
+| ------------- | -------------------------------- | ------------ | ------- | --------------------- |
+| id_conta      | Referência à conta               | SERIAL       | -       | PK, FK, NOT NULL      |
+| id_pagamento  | Referência ao pagamento          | SERIAL       | -       | PK, FK, NOT NULL      |
+
+|   Tabela   | Venda_produto |
+| ---------- | ----------- |
+| Descrição  | Tabela associativa entre Venda e Produto. |
+| Observação | Representa a relação N:N (muitos para muitos) entre vendas e produtos. |
+
+|  Nome         | Descrição                        | Tipo de Dado | Tamanho | Restrições de Domínio |
+| ------------- | -------------------------------- | ------------ | ------- | --------------------- |
+| id_venda      | Referência à venda               | SERIAL       | -       | PK, FK, NOT NULL      |
+| id_produto    | Referência ao produto            | SERIAL       | -       | PK, FK, NOT NULL      |
+| quantidade    | Quantidade de produtos na venda  | INTEGER      | -       | NOT NULL, > 0         |
