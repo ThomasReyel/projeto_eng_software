@@ -9,8 +9,8 @@ Projeto acadêmico desenvolvido para as disciplinas de Engenharia de Software 1 
 ### 1. Clonar o repositório
 
 ```bash
-git clone <URL_DO_REPOSITORIO>
-cd <NOME_DO_REPOSITORIO>
+git clone https://github.com/ThomasReyel/projeto_eng_software.git
+cd projeto_eng_software
 ```
 
 ---
