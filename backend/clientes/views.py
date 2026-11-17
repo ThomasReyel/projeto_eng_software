@@ -1,4 +1,5 @@
 # clientes/views.py
+from django.shortcuts import get_object_or_404
 from rest_framework import viewsets, status
 from rest_framework.response import Response
 from rest_framework.decorators import action
@@ -24,4 +25,7 @@ class ClienteViewSet(viewsets.ViewSet):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def retrieve(self, request, pk=None):
-        return Response({"detail": f"Cliente {pk}: em implementação"})
+        cliente = get_object_or_404(Cliente, pk=pk)
+        serializer = ClienteSerializer(cliente)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    
