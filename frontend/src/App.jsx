@@ -4,6 +4,7 @@ import AppTheme from './theme/AppTheme';
 import DashboardLayout from './components/layout/DashboardLayout';
 import Home from './pages/Home';
 import ClientList from './pages/ClientList';
+import ClienteFormPage from "./pages/ClienteFormPage";
 
 function App() {
   return (
@@ -16,11 +17,11 @@ function App() {
             <Route path="/clientes" element={<ClientList />} />
             <Route
               path="/clientes/novo"
-              element={<Typography variant="h6">Formulário de Novo Cliente (próxima issue)</Typography>}
+              element={<ClienteFormPage />}
             />
             <Route
               path="/clientes/:id/editar"
-              element={<Typography variant="h6">Formulário de Edição de Cliente (próxima issue)</Typography>}
+              element={<ClienteFormPage />}
             />
           </Route>
         </Routes>
