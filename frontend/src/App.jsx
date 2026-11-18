@@ -1,30 +1,31 @@
-import { useEffect, useState } from 'react';
-import api from './services/api';
-import Navbar from './components/Navbar';
-import ClientesPage from './pages/ClientesPage';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Typography } from '@mui/material';
+import AppTheme from './theme/AppTheme';
+import DashboardLayout from './components/layout/DashboardLayout';
+import Home from './pages/Home';
+import ClientList from './pages/ClientList';
 
 function App() {
-  const [statusApi, setStatusApi] = useState('Verificando conexão com o back-end...');
-
-  useEffect(() => {
-    api.get('/')
-      .then((response) => {
-        setStatusApi('Conectado! Resposta: ' + JSON.stringify(response.data));
-      })
-      .catch((error) => {
-        setStatusApi('Aguardando back-end ou liberação de CORS (' + error.message + ')');
-      });
-  }, []);
-
   return (
-    <div style={{ fontFamily: 'sans-serif' }}>
-      <Navbar />
-      <main style={{ padding: '2rem' }}>
-        <p><strong>Status da API:</strong> {statusApi}</p>
-        <hr />
-        <ClientesPage />
-      </main>
-    </div>
+    <AppTheme>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+
+          <Route element={<DashboardLayout />}>
+            <Route path="/clientes" element={<ClientList />} />
+            <Route
+              path="/clientes/novo"
+              element={<Typography variant="h6">Formulário de Novo Cliente (próxima issue)</Typography>}
+            />
+            <Route
+              path="/clientes/:id/editar"
+              element={<Typography variant="h6">Formulário de Edição de Cliente (próxima issue)</Typography>}
+            />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </AppTheme>
   );
 }
 
