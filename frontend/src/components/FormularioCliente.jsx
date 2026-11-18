@@ -1,3 +1,4 @@
+import { Alert, Box, Button, Checkbox, FormControlLabel, Stack, TextField } from "@mui/material";
 import { useState } from "react";
 
 const CAMPOS_OBRIGATORIOS = {
@@ -17,15 +18,6 @@ const VALORES_INICIAIS = {
     cpf: "",
     email: "",
     status: true,
-};
-
-const estilos = {
-    form: { display: "flex", flexDirection: "column", gap: "1rem", maxWidth: "480px", textAlign: "left" },
-    campo: { display: "flex", flexDirection: "column", gap: "0.25rem" },
-    input: { padding: "0.5rem", fontSize: "1rem" },
-    erro: { color: "#dc2626", fontSize: "0.85rem" },
-    erroGeral: { color: "#dc2626", border: "1px solid #dc2626", padding: "0.75rem", borderRadius: "4px" },
-    botoes: { display: "flex", gap: "0.75rem" },
 };
 
 function validar(valores) {
@@ -83,57 +75,58 @@ function FormularioCliente({
     function renderCampo(campo, rotulo, props = {}) {
         const mensagem = mensagemDe(campo);
         return (
-            <div style={estilos.campo}>
-                <label htmlFor={campo}>{rotulo}</label>
-                <input
-                    id={campo}
-                    name={campo}
-                    value={valores[campo]}
-                    onChange={handleChange}
-                    style={{ ...estilos.input, ...(mensagem ? { borderColor: "#dc2626" } : {}) }}
-                    aria-invalid={Boolean(mensagem)}
-                    {...props}
-                />
-                {mensagem && (
-                    <span style={estilos.erro} role="alert">
-                        {mensagem}
-                    </span>
-                )}
-            </div>
+            <TextField
+                id={campo}
+                name={campo}
+                label={rotulo}
+                value={valores[campo]}
+                onChange={handleChange}
+                error={Boolean(mensagem)}
+                helperText={mensagem}
+                fullWidth
+                {...props}
+            />
         );
     }
 
     return (
-        <form onSubmit={handleSubmit} style={estilos.form} noValidate>
-            {errosApi.detalhe && (
-                <div style={estilos.erroGeral} role="alert">
-                    {errosApi.detalhe}
-                </div>
-            )}
+        <Box component="form" onSubmit={handleSubmit} noValidate sx={{ maxWidth: 480, textAlign: "left" }}>
+            <Stack spacing={2}>
+                {errosApi.detalhe && <Alert severity="error">{errosApi.detalhe}</Alert>}
 
-            {renderCampo("nome", "Nome *", { maxLength: 150 })}
-            {renderCampo("data_nascimento", "Data de nascimento *", { type: "date" })}
-            {renderCampo("endereco", "Endereço *", { maxLength: 255 })}
-            {renderCampo("telefone", "Telefone *", { type: "tel", maxLength: 20 })}
-            {renderCampo("cpf", "CPF *", { maxLength: 14 })}
-            {renderCampo("email", "E-mail *", { type: "email", maxLength: 254 })}
+                {renderCampo("nome", "Nome *", { slotProps: { htmlInput: { maxLength: 150 } } })}
+                {renderCampo("data_nascimento", "Data de nascimento *", {
+                    type: "date",
+                    slotProps: { inputLabel: { shrink: true } },
+                })}
+                {renderCampo("endereco", "Endereço *", { slotProps: { htmlInput: { maxLength: 255 } } })}
+                {renderCampo("telefone", "Telefone *", {
+                    type: "tel",
+                    slotProps: { htmlInput: { maxLength: 20 } },
+                })}
+                {renderCampo("cpf", "CPF *", { slotProps: { htmlInput: { maxLength: 14 } } })}
+                {renderCampo("email", "E-mail *", {
+                    type: "email",
+                    slotProps: { htmlInput: { maxLength: 254 } },
+                })}
 
-            {modoEdicao && (
-                <label>
-                    <input type="checkbox" name="status" checked={valores.status} onChange={handleChange} /> Cliente
-                    ativo
-                </label>
-            )}
+                {modoEdicao && (
+                    <FormControlLabel
+                        control={<Checkbox name="status" checked={valores.status} onChange={handleChange} />}
+                        label="Cliente ativo"
+                    />
+                )}
 
-            <div style={estilos.botoes}>
-                <button type="submit" disabled={enviando}>
-                    {enviando ? "Salvando..." : modoEdicao ? "Salvar alterações" : "Cadastrar cliente"}
-                </button>
-                <button type="button" onClick={onCancelar} disabled={enviando}>
-                    Cancelar
-                </button>
-            </div>
-        </form>
+                <Stack direction="row" spacing={1.5}>
+                    <Button type="submit" variant="contained" disabled={enviando}>
+                        {enviando ? "Salvando..." : modoEdicao ? "Salvar alterações" : "Cadastrar cliente"}
+                    </Button>
+                    <Button type="button" variant="outlined" onClick={onCancelar} disabled={enviando}>
+                        Cancelar
+                    </Button>
+                </Stack>
+            </Stack>
+        </Box>
     );
 }
 

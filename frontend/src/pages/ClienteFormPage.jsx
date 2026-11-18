@@ -1,3 +1,4 @@
+import { Alert, CircularProgress, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import FormularioCliente from "../components/FormularioCliente";
@@ -48,18 +49,20 @@ function ClienteFormPage() {
         }
     }
 
-    if (carregando) return <p>Carregando cliente...</p>;
+    if (carregando) return <CircularProgress aria-label="Carregando cliente" sx={{ mt: 3 }} />;
     // Edição que falhou ao carregar: mostra o erro em vez de um formulário vazio
     if (modoEdicao && !cliente)
         return (
-            <p role="alert" style={{ color: "#dc2626" }}>
+            <Alert severity="error" sx={{ mt: 3 }}>
                 {erros.detalhe}
-            </p>
+            </Alert>
         );
 
     return (
         <section style={{ marginTop: "1.5rem" }}>
-            <h3>{modoEdicao ? "Editar cliente" : "Novo cliente"}</h3>
+            <Typography variant="h5" component="h3" gutterBottom>
+                {modoEdicao ? "Editar cliente" : "Novo cliente"}
+            </Typography>
             <FormularioCliente
                 valoresIniciais={cliente ?? undefined}
                 onSubmit={salvar}
