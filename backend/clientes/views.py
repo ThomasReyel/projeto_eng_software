@@ -28,4 +28,23 @@ class ClienteViewSet(viewsets.ViewSet):
         cliente = get_object_or_404(Cliente, pk=pk)
         serializer = ClienteSerializer(cliente)
         return Response(serializer.data, status=status.HTTP_200_OK)
-    
+
+
+    def put(self, request, pk):
+        cliente = get_object_or_404(Cliente, pk=pk)
+        serializer = ClienteSerializer(cliente, data=request.data) 
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)
+
+    def patch(self, request, pk):
+        cliente = get_object_or_404(Cliente, pk=pk)
+        serializer = ClienteSerializer(cliente, data=request.data, partial=True) 
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)
+
+    def delete(self, request, pk):
+        cliente = get_object_or_404(Cliente, pk=pk)
+        cliente.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)

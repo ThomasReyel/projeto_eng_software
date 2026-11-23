@@ -17,3 +17,8 @@ export async function atualizarCliente(id, dados) {
     const { data } = await api.put(`/clientes/${id}/`, dados);
     return data;
 }
+
+export async function deletarCliente(id, dados) {
+    const { data } = await api.delete(`/clientes/${id}/`, dados);
+    return data;
+}
