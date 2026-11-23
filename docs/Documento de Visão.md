@@ -48,7 +48,7 @@ Um funcionário tem: nome, data de nascimento, endereço, telefone, CPF e senha.
 
 Requisito                         | Descrição | Ator |
 --------------------------------- | ----------- | ---------- |
-RF01.01 - Inserir Funcionário     | Insere novo funcionário informando: nome, data de nascimento, endereço, telefone, CPF e senha. | Administrador |
+RF01.01 - Inserir Funcionário     | Insere novo funcionário informando: nome, data de nascimento, telefone, CPF e senha. | Administrador |
 RF01.02 - Listar Funcionários     | Listagem de funcionários utilizando filtros nos atributos: nome, data de nascimento, endereço, telefone e CPF. | Administrador |
 RF01.03 - Atualizar Funcionário   | Atualiza um funcionário informando: nome, data de nascimento, endereço, telefone, CPF e senha. | Administrador |
 RF01.04 - Desativar Funcionário   | Desativa um funcionário cadastrado no sistema. | Administrador |
@@ -60,7 +60,7 @@ Um cliente tem: nome, data de nascimento, endereço, telefone e CPF.
 
 Requisito                         | Descrição | Ator |
 --------------------------------- | ----------- | ---------- |
-RF02.01 - Inserir Cliente         | Insere novo cliente informando: nome, data de nascimento, endereço, telefone e CPF. | Funcionário, Cliente |
+RF02.01 - Inserir Cliente         | Insere novo cliente informando: nome, data de nascimento,email, endereço, telefone e CPF. | Funcionário, Cliente |
 RF02.02 - Listar Clientes         | Listagem de clientes utilizando filtros nos atributos: nome, data de nascimento, endereço, telefone e CPF. | Funcionário, Cliente |
 RF02.03 - Atualizar Cliente       | Atualiza um cliente informando: nome, data de nascimento, endereço, telefone e CPF. | Funcionário, Cliente |
 RF02.04 - Desativar Cliente       | Desativa um cliente cadastrado no sistema. | Funcionário, Cliente |
@@ -95,7 +95,7 @@ Uma venda tem: cliente, funcionário responsável, produto, data e valor.
 
 Requisito                         | Descrição | Ator |
 --------------------------------- | ----------- | ---------- |
-RF05.01 - Inserir Venda           | Cadastra nova venda informando: cliente, funcionário responsável, produto, data e valor. | Funcionário |
+RF05.01 - Inserir Venda           | Cadastra nova venda informando: cliente, funcionário responsável, produto,motivo_cancelamento, data e valor. | Funcionário |
 
 ---
 
