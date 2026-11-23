@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Mude para false quando o servidor Django estiver rodando
-export const USE_MOCK_DATA = true;
+export const USE_MOCK_DATA = false;
 
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_URL || 'http://localhost:8000/api',
